@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 8080
 const app = exspress()
 
 app.use(exspress.json())
-app.use('/articles', articlesRouter)
 app.use('/articles', commentsRouter)
+app.use('/articles', articlesRouter)
 app.use('/analytic/comments', RangeComment)
 
 app.listen(PORT, () => console.log(`${PORT}`))

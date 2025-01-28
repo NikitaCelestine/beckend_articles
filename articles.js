@@ -1,4 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
+const comments = require('./comments');
 
 const sequelize = new Sequelize('postgres', 'postgres', 'admin', {
   host: 'localhost',

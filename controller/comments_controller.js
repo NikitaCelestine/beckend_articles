@@ -12,9 +12,9 @@ class Comments_controller {
         }).catch(err=>console.log(err));
 
       };
-    async getComments (req, res){               
+    async getComments (req, res){      
+        console.log('fdedd')         
         const id = req.params.id
-        //const comment_id =  req.params.comment_id
         await comments.findAll({
             where: {
                 articles_Id: id,

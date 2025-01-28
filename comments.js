@@ -42,7 +42,6 @@ const comments = sequelize.define(
     }
 );
 
-// `sequelize.define` возвращает модель
-console.log(comments === sequelize.models.comments); // true
+console.log(comments === sequelize.models.comments); 
 
 module.exports = comments
