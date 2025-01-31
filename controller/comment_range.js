@@ -5,7 +5,8 @@ class RangeComment{
     async getComments (req, res){ 
         console.log(req.body)
         const dateFrom = req.query.dateFrom
-        const dateTo = req.query.dateTo              
+        const dateTo = req.query.dateTo    
+        console.log(dateTo)          
         const id = req.params.id
         await comments.findAll({
             where: {

@@ -1,13 +1,12 @@
 const articles = require("../articles");
 
-
 class Articles_controller {
     async createArticles (req, res){
         const name_articles = req.body.name_articles
         const text_articles = req.body.text_articles
         const date = +new Date()
-        await articles.create({name_articles: name_articles, text_articles: text_articles, date: date}).then(()=>{
-            res.json('запись добавлена')
+        await articles.create({name_articles: name_articles, text_articles: text_articles, date: date}).then((data)=>{
+            res.json(data)
         }).catch(err=>console.log(err));
 
       };
@@ -22,6 +21,18 @@ class Articles_controller {
             then(data => {
                 res.json(data)
             }).catch(err=>console.log(err));
+        
+      };
+
+      async getNameArticles (req, res){  
+        console.log(req.query)
+        await articles.findAll({
+            attributes: ['name_articles', 'id']
+            }).
+        then(data => {
+            res.json(data)
+        }).catch(err=>console.log(err));          
+
         
       };
       

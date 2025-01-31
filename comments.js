@@ -24,7 +24,7 @@ const comments = sequelize.define(
         date_update: {
             type: Sequelize.DataTypes.BIGINT,
         },
-        articles_Id: {
+        articleId: {
             type: Sequelize.DataTypes.INTEGER,
             references: {
               model: {
